@@ -66,7 +66,7 @@ test('should handle date changes correctly', () => {
     const endDate = moment(0).add(8,'years');
     wrapper.find('DateRangePicker').prop('onDatesChange')({ startDate, endDate });
     expect(setStartDate).toHaveBeenLastCalledWith(startDate);
-    expect(setEndDate).toHaveBeenLastCalledWith(EndDate);
+    expect(setEndDate).toHaveBeenLastCalledWith(endDate);
 });
 
 test('should handle date focus changes correctly', () => {
