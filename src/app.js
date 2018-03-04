@@ -9,9 +9,11 @@ import getVisibleExpenses from './selectors/expenses'
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 import 'react-dates/lib/css/_datepicker.css';
+import './firebase/firebase';
+// import './z_playground/promises';
 
 const store = configureStore();
-console.log('test');
+
 const jsx = (
     <Provider store={store}>
         <AppRouter/>
