@@ -32,6 +32,15 @@ export const removeExpense = ({ id } = {}) => ({
     id
 });
 
+// REMOVE_EXPENSE_FROM_FIREBASE:
+export const startRemoveExpense = ({id} = {}) => {
+    return (dispatch) => {
+        return database.ref(`expenses/${id}`).remove().then(() => {
+            dispatch(removeExpense({id}));
+        });
+    };
+};
+
 // EDIT_EXPENSE
 export const editExpense = (id,updates) => ({
     type: 'EDIT_EXPENSE',
@@ -45,9 +54,7 @@ export const setExpenses = (expenses) => ({
     expenses
 });
 
-//1) Fetch all expenses data
-//2) Parse that data in to an array (see firebase.js files)\
-//3) Dispatch SET_EXPENSES
+// SET_EXPENSES_IN_FIREBASE:
 
 export const startSetExpenses = (expenseData = {}) => {
     return (dispatch) => {
